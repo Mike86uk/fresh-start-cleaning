@@ -148,14 +148,14 @@ img { max-width: 100%; display: block; }
     align-items: center;
 }
 
-/* Logo Styling Update */
+/* Logo Styling */
 .logo {
     display: flex;
     align-items: center;
 }
 
 .logo img {
-    height: 75px; /* Increased by 50% (was 50px) */
+    height: 75px;
     width: auto;
     object-fit: contain;
 }
@@ -252,27 +252,7 @@ img { max-width: 100%; display: block; }
 
 .hero-btns { display: flex; gap: 20px; }
 
-/* Shape Divider */
-.custom-shape-divider-bottom-1680000000 {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    overflow: hidden;
-    line-height: 0;
-    z-index: 2;
-}
-
-.custom-shape-divider-bottom-1680000000 svg {
-    position: relative;
-    display: block;
-    width: calc(100% + 1.3px);
-    height: 100px;
-}
-
-.custom-shape-divider-bottom-1680000000 .shape-fill {
-    fill: #FFFFFF;
-}
+/* Shape Divider CSS REMOVED */
 
 /* --- About Section --- */
 .about-layout {
@@ -677,8 +657,8 @@ footer {
     .nav-links {
         position: absolute;
         right: 0;
-        top: 70px; /* Reduced since logo is bigger, but header expands. Keeping safe margin. */
-        height: calc(100vh - 70px);
+        top: 90px;
+        height: calc(100vh - 90px);
         background: var(--white);
         flex-direction: column;
         width: 100%;
@@ -691,5 +671,43 @@ footer {
     
     .hero-btns { flex-direction: column; }
     .section-header h2 { font-size: 2rem; }
-    .contact-card { padding: 30px; }
+    
+    /* MOBILE FIXES */
+    
+    /* 1. Hero Title Fix */
+    #hero {
+        height: auto;
+        min-height: 100vh;
+        padding-top: 140px; /* Clears navbar */
+        padding-bottom: 80px; /* Standard spacing (reduced from 150px) */
+        background-attachment: scroll; 
+    }
+
+    /* 2. Form Centering Fix */
+    .contact-card {
+        padding: 40px 20px;
+        text-align: center;
+    }
+
+    .contact-details {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .cd-item {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .cd-item i {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .clean-form {
+        width: 100%;
+        max-width: 500px;
+        margin: 0 auto;
+    }
 }
